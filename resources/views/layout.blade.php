@@ -70,14 +70,13 @@
           
 
             <div class="content">
-                <div class="title m-b-md">
-            
+               <br>
+               <br>
+               <br>
             @yield('thecontent')
-                 
-                </div>
-
-           
+                   
             </div>
+
         </div>
     </body>
 </html>

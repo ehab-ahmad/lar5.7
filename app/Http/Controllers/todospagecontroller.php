@@ -16,4 +16,15 @@ class todospagecontroller extends Controller
 	/*$todoVariable=Todo::all();
 
      return view('todos')->with('TheDataHodler',$todoVariable);*/}
+
+     public function store(Request $request){
+     	$todostore= new Todo;
+     	$todostore->todo=$request->todoform;
+     	$todostore->save();
+
+     	return redirect()->back();
+
+
+
+     }
 }
