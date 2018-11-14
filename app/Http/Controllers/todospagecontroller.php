@@ -23,8 +23,15 @@ class todospagecontroller extends Controller
      	$todostore->save();
 
      	return redirect()->back();
-
-
-
      }
+
+public function deleter ($id)
+{
+    # code...
+    $td= Todo::find($id);
+    $td->delete();
+    return redirect()->back();
+
+}
+
 }

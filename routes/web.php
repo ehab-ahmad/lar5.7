@@ -19,3 +19,7 @@ Route::get('/new',['uses' => 'pagecontroller@myfunc1']);
 Route::get('/todos',['uses' => 'todospagecontroller@index']);
 //NOTIce THE POST in the ROUTE not get
 Route::post('/create/todos',['uses' => 'todospagecontroller@store']);
+
+Route::get('/todo/delete/{id3}',['uses'=>
+	'todospagecontroller@deleter', 'as'=>'tododeleter'
+]);

@@ -14,7 +14,9 @@
 		@csrf
 
 		<input type="text" name="todoform" class="form-control input-lg" placeholder="input here ">	
-		
+
+
+
 		
 
 	</form>
@@ -30,7 +32,9 @@
 
      @foreach($todosvar as $todo2)
                  {{$todo2->todo}}
-                 <br>
+                  <a href="{{route('tododeleter',['id3'=>$todo2->id])}}" class="btn btn-danger">
+                    delete
+                  </a>
                  <hr>
                  @endforeach
 
