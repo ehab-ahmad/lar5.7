@@ -33,5 +33,22 @@ public function deleter ($id)
     return redirect()->back();
 
 }
+public function updater ($id)
+{
+   $td=Todo::find($id);
+
+   return view('update')->with('td',$td);
+
+}
+public function saveupdate(Request $request ,$id)
+{
+    //dd($request->all());
+      $td= Todo::find($id);
+        $td->todo=$request->todoupdatein;
+        $td->save();
+        //redirect to a specific route
+    return redirect()->route('homepagee');
+
+}
 
 }

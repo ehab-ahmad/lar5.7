@@ -35,6 +35,11 @@
                   <a href="{{route('tododeleter',['id3'=>$todo2->id])}}" class="btn btn-danger">
                     delete
                   </a>
+                   <a href="{{route('todoupdater',['id4'=>$todo2->id])}}" class="btn btn-info">
+                    update
+                  </a>
+                  
+
                  <hr>
                  @endforeach
 
