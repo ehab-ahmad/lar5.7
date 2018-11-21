@@ -15,10 +15,6 @@
 
 		<input type="text" name="todoform" class="form-control input-lg" placeholder="input here ">	
 
-
-
-		
-
 	</form>
 
 </div>
@@ -38,6 +34,19 @@
                    <a href="{{route('todoupdater',['id4'=>$todo2->id])}}" class="btn btn-info">
                     update
                   </a>
+
+                  @if(!$todo2->completed)
+                  
+                   <a href="{{route('completed',['id'=>$todo2->id])}}" class="btn btn-info">
+                    mark as completed
+                  </a>
+                
+                
+                @else($todo2->completed)
+                     <div class="alert alert-info" role="alert">
+                     completed
+                     </div>
+                @endif
                   
 
                  <hr>

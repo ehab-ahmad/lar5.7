@@ -28,3 +28,12 @@ Route::get('/todo/update/{id4}',['uses'=>
 	'todospagecontroller@updater', 'as'=>'todoupdater'
 ]);
 Route::post('todo/saveupdate/{id}',['uses'=>'todospagecontroller@saveupdate', 'as'=>'updatesaver']);
+Route::get('todo/completed/{id}',['uses'=>'todospagecontroller@completer','as'=>'completed']);
+
+
+//testing
+Route::get('/test',['uses'=>'homepagecontroller@homepage','as'=>'homepage-route','as'=>'test']);
+Route::post('/test/adding',['uses'=>'homepagecontroller@adding']);
+Route::get('/test/delete/{id}',['uses'=>'homepagecontroller@deleter','as'=>'deleter']);
+Route::get('/test/update/{id}',['uses'=>'homepagecontroller@update','as'=>'updater']);
+Route::post('/test/saveupdate/{id}',['uses'=>'homepagecontroller@saveupdate','as'=>'saveupdate']);

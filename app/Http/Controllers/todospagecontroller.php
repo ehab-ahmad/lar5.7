@@ -50,5 +50,13 @@ public function saveupdate(Request $request ,$id)
     return redirect()->route('homepagee');
 
 }
+public function completer($id)
+{
+    # code...
+    $td=Todo::find($id);
+    $td->completed=1;
+    $td->save();
+    return redirect()->back();
+}
 
 }
