@@ -66,6 +66,14 @@
         </style>
     </head>
     <body>
+@if(Session::has('sessionkey'))
+<div class="alert alert-success" role="alert">
+    {{Session::get('sessionkey')}}
+</div>
+@endif
+
+
+
         <div class="flex-center position-ref full-height">
           
 

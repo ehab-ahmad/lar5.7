@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Todo;
+use Session;
 
 class todospagecontroller extends Controller
 {
@@ -21,7 +22,7 @@ class todospagecontroller extends Controller
      	$todostore= new Todo;
      	$todostore->todo=$request->todoform;
      	$todostore->save();
-
+Session::flash('sessionkey','data added');
      	return redirect()->back();
      }
 
@@ -30,6 +31,7 @@ public function deleter ($id)
     # code...
     $td= Todo::find($id);
     $td->delete();
+    Session::flash('sessionkey','data deleted');
     return redirect()->back();
 
 }
@@ -46,6 +48,7 @@ public function saveupdate(Request $request ,$id)
       $td= Todo::find($id);
         $td->todo=$request->todoupdatein;
         $td->save();
+        Session::flash('sessionkey','data updated');
         //redirect to a specific route
     return redirect()->route('homepagee');
 
@@ -56,6 +59,7 @@ public function completer($id)
     $td=Todo::find($id);
     $td->completed=1;
     $td->save();
+    Session::flash('sessionkey','data marked as complete');
     return redirect()->back();
 }
 
